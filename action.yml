@@ -1,0 +1,35 @@
+name: "ECZ-ID Trust Delta"
+description: "Compare normalized GitHub workflow authority/currentness evidence with a reviewed baseline without retaining raw source or secret names."
+author: EcoCitizenz Ltd
+branding:
+  icon: shield
+  color: green
+inputs:
+  baseline-path:
+    description: "Reviewed baseline snapshot path."
+    required: false
+    default: ".eczid/github-trust-snapshot.json"
+  report-path:
+    description: "Path for the delta report."
+    required: false
+    default: "eczid-trust-delta.json"
+  proposal-path:
+    description: "Path for the current proposed snapshot; never auto-committed."
+    required: false
+    default: ".eczid/github-trust-snapshot.proposed.json"
+outputs:
+  result-state:
+    description: "NO_BASELINE, UNCHANGED or CHANGED."
+  change-count:
+    description: "Number of normalized changes."
+  baseline-established:
+    description: "Whether a prior reviewed baseline existed."
+  report-path:
+    description: "Generated delta report path."
+  proposal-path:
+    description: "Generated current snapshot proposal path."
+  reason-codes:
+    description: "Deterministic change reason codes."
+runs:
+  using: node24
+  main: dist/index.js
