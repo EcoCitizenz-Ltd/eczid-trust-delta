@@ -1,5 +1,5 @@
 name: "ECZ-ID Trust Delta"
-description: "Compare normalized GitHub workflow authority/currentness evidence with a reviewed baseline without retaining raw source or secret names."
+description: "Compare normalized GitHub trust/currentness evidence with a reviewed baseline without retaining raw source."
 author: EcoCitizenz Ltd
 branding:
   icon: shield
